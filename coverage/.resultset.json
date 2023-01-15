@@ -52,7 +52,7 @@
           null,
           1,
           null,
-          1,
+          0,
           null,
           null,
           1,
@@ -60,7 +60,7 @@
           2,
           null,
           2,
-          2,
+          4,
           null,
           2,
           null,
@@ -116,8 +116,23 @@
           null,
           null
         ]
+      },
+      "/Users/kassandraleyba/turing_work/1mod/projects/nightwriter/spec/translator_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1673747360
+    "timestamp": 1673753256
   }
 }

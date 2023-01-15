@@ -24,7 +24,6 @@ RSpec.describe NightWriter do
   describe "Translate" do
     it "can translate a letter to braille" do
       expect(night_writer.translate_to_braille("a")).to eq("0.\n..\n..")
-      # expect(night_writer.translate_to_braille("b")).to eq("00\n..\n..")
     end
   end
 end

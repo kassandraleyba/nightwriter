@@ -34,7 +34,12 @@ class NightWriter # < Translator
       "x" => ["0.", "00", ".0"],
       "y" => ["0.", "00", "00"],
       "z" => ["0.", "0.", "00"],
-      " " => ["..", "..", ".."]
+      " " => ["..", "..", ".."],
+      "," => ["..", "0.", ".."],
+      "'" => ["..", "..", "0."],
+      "!" => ["..", "00", "0."],
+      "?" => ["..", "0.", "00"]
+      # account for punctuation
     }
   end
   
@@ -55,7 +60,8 @@ class NightWriter # < Translator
     braille = message.split('')
     
     new_braille_thing = braille.map do |letter|
-        @braille_alphabet[letter]
+        @braille_alphabet[letter.downcase]
+        # to account for cap letters
     end
     new_braille_thing.transpose.map(&:join).join("\n")
   end
