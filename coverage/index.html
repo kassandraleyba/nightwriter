@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.12.3/application.js' type='text/javascript'></script>
     <link href='./assets/0.12.3/application.css' media='screen, projection, print' rel='stylesheet' type='text/css' />
-    <link rel="shortcut icon" type="image/png" href="./assets/0.12.3/favicon_red.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.12.3/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.12.3/favicon.png" />
   </head>
 
@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-01-15T14:06:16-07:00">2023-01-15T14:06:16-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-01-15T16:24:59-07:00">2023-01-15T16:24:59-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -22,15 +22,15 @@
   <h2>
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
-      <span class="red">
-  31.82%
+      <span class="yellow">
+  85.71%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.32
+       <span class="green">
+         2.11
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>22</b> relevant lines,
-    <span class="green"><b>7</b> lines covered</span> and
-    <span class="red"><b>15</b> lines missed. </span>
-    (<span class="red">
-  31.82%
+    <b>28</b> relevant lines,
+    <span class="green"><b>24</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed. </span>
+    (<span class="yellow">
+  85.71%
 </span>
 )
   </div>
@@ -72,23 +72,23 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#6098bb485996f0b83988494d5b3d9921535f4677" class="src_link" title="lib/night_reader.rb">lib/night_reader.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="red strong cell--number t-file__coverage">50.00 %</td>
+            <td class="cell--number">50</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">0.50</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#ccb18e24130c0236f93ddd5e8da9aef52cfae61c" class="src_link" title="lib/night_writer.rb">lib/night_writer.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">25.00 %</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">77</td>
             <td class="cell--number">20</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">0.25</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">2.75</td>
             
           </tr>
         
@@ -113,8 +113,8 @@
   <div class="header">
     <h3>lib/night_reader.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="red">
+  50.0%
 </span>
 
       lines covered
@@ -123,9 +123,9 @@
     
 
     <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>8</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
 
     
@@ -153,7 +153,7 @@
 
             
 
-            <code class="ruby">  def initialize</code>
+            <code class="ruby">  attr_accessor :read_file,</code>
           </li>
         </div>
       
@@ -164,7 +164,7 @@
 
             
 
-            <code class="ruby">    </code>
+            <code class="ruby">                :write_file,</code>
           </li>
         </div>
       
@@ -175,7 +175,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">                :braille_alphabet</code>
           </li>
         </div>
       
@@ -186,7 +186,502 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def initialize</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">    @read_file = ARGV[1]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">    @write_file = ARGV[0]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">    @braille_alphabet = {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;a&quot; =&gt; [&quot;0.&quot;, &quot;..&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;b&quot; =&gt; [&quot;00&quot;, &quot;..&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;c&quot; =&gt; [&quot;0.&quot;, &quot;.0&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;d&quot; =&gt; [&quot;0.&quot;, &quot;.0&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;e&quot; =&gt; [&quot;0.&quot;, &quot;..&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;f&quot; =&gt; [&quot;00&quot;, &quot;.0&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;g&quot; =&gt; [&quot;00&quot;, &quot;.0&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;h&quot; =&gt; [&quot;00&quot;, &quot;..&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;i&quot; =&gt; [&quot;.0&quot;, &quot;.0&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;j&quot; =&gt; [&quot;.0&quot;, &quot;.0&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;k&quot; =&gt; [&quot;0.&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;l&quot; =&gt; [&quot;00&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;m&quot; =&gt; [&quot;0.&quot;, &quot;00&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;n&quot; =&gt; [&quot;0.&quot;, &quot;00&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;o&quot; =&gt; [&quot;0.&quot;, &quot;0.&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;p&quot; =&gt; [&quot;00&quot;, &quot;00&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;q&quot; =&gt; [&quot;00&quot;, &quot;00&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;r&quot; =&gt; [&quot;00&quot;, &quot;0.&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;s&quot; =&gt; [&quot;.0&quot;, &quot;00&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;t&quot; =&gt; [&quot;.0&quot;, &quot;00&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;u&quot; =&gt; [&quot;0.&quot;, &quot;0.&quot;, &quot;.0&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;v&quot; =&gt; [&quot;00&quot;, &quot;0.&quot;, &quot;.0&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;w&quot; =&gt; [&quot;.0&quot;, &quot;.0&quot;, &quot;00&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;x&quot; =&gt; [&quot;0.&quot;, &quot;00&quot;, &quot;.0&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;y&quot; =&gt; [&quot;0.&quot;, &quot;00&quot;, &quot;00&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;z&quot; =&gt; [&quot;0.&quot;, &quot;0.&quot;, &quot;00&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">      &quot; &quot; =&gt; [&quot;..&quot;, &quot;..&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;,&quot; =&gt; [&quot;..&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;&#39;&quot; =&gt; [&quot;..&quot;, &quot;..&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;!&quot; =&gt; [&quot;..&quot;, &quot;00&quot;, &quot;0.&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;?&quot; =&gt; [&quot;..&quot;, &quot;0.&quot;, &quot;00&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby">    }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def english_alphabet</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">    @braille_alphabet.invert</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
             <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby"># night_reader = NightReader.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby"># night_reader.call</code>
           </li>
         </div>
       
@@ -199,8 +694,8 @@
   <div class="header">
     <h3>lib/night_writer.rb</h3>
     <h4>
-      <span class="red">
-  25.0%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -210,8 +705,8 @@
 
     <div class="t-line-summary">
       <b>20</b> relevant lines.
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>15</b> lines missed.</span>
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -299,8 +794,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="8">
-            
+          <li class="covered" data-hits="3" data-linenumber="8">
+            <span class="hits">3</span>
             
 
             
@@ -310,8 +805,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="9">
-            
+          <li class="covered" data-hits="3" data-linenumber="9">
+            <span class="hits">3</span>
             
 
             
@@ -332,8 +827,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="11">
-            
+          <li class="covered" data-hits="3" data-linenumber="11">
+            <span class="hits">3</span>
             
 
             
@@ -717,8 +1212,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="46">
-            
+          <li class="covered" data-hits="1" data-linenumber="46">
+            <span class="hits">1</span>
             
 
             
@@ -739,8 +1234,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="48">
-            
+          <li class="covered" data-hits="1" data-linenumber="48">
+            <span class="hits">1</span>
             
 
             
@@ -761,8 +1256,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="50">
-            
+          <li class="covered" data-hits="1" data-linenumber="50">
+            <span class="hits">1</span>
             
 
             
@@ -783,8 +1278,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="52">
-            
+          <li class="covered" data-hits="1" data-linenumber="52">
+            <span class="hits">1</span>
             
 
             
@@ -805,8 +1300,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="54">
-            
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
             
 
             
@@ -849,8 +1344,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="58">
-            
+          <li class="covered" data-hits="2" data-linenumber="58">
+            <span class="hits">2</span>
             
 
             
@@ -860,8 +1355,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="59">
-            
+          <li class="covered" data-hits="2" data-linenumber="59">
+            <span class="hits">2</span>
             
 
             
@@ -882,8 +1377,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="61">
-            
+          <li class="covered" data-hits="2" data-linenumber="61">
+            <span class="hits">2</span>
             
 
             
@@ -893,8 +1388,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="62">
-            
+          <li class="covered" data-hits="16" data-linenumber="62">
+            <span class="hits">16</span>
             
 
             
@@ -926,8 +1421,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="65">
-            
+          <li class="covered" data-hits="2" data-linenumber="65">
+            <span class="hits">2</span>
             
 
             
@@ -937,8 +1432,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="66">
-            
+          <li class="covered" data-hits="6" data-linenumber="66">
+            <span class="hits">6</span>
             
 
             
@@ -948,8 +1443,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="67">
-            
+          <li class="covered" data-hits="6" data-linenumber="67">
+            <span class="hits">6</span>
             
 
             
