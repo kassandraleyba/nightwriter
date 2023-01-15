@@ -54,10 +54,10 @@ class NightWriter # < Translator
     message = File.read(@read_file)
     braille = message.split('')
     
-    braille.flat_map do |letter|
-      # require 'pry'; binding.pry
+    new_braille_thing = braille.map do |letter|
         @braille_alphabet[letter]
-      end.join("\n")
+    end
+    new_braille_thing.transpose.map(&:join).join("\n")
   end
 end
 
