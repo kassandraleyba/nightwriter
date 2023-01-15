@@ -1,4 +1,4 @@
-class NightWriter
+class NightWriter # < Translator
   attr_accessor :read_file,
                 :write_file, 
                 :braille_alphabet
@@ -33,32 +33,36 @@ class NightWriter
       "w" => [".0", ".0", "00"],
       "x" => ["0.", "00", ".0"],
       "y" => ["0.", "00", "00"],
-      "z" => ["0.", "0.", "00"]
+      "z" => ["0.", "0.", "00"],
+      " " => ["..", "..", ".."]
     }
   end
   
-  def call
-    message_file = File.open(@read_file, "r")
-    # new_file = File.new(@write_file, "w")
-    
-    
-    text = message_file.read
-    char_count = text.chars.count
+  def read_write_text
+    message = File.read(@read_file)
+   
+    char_count = message.chars.count
     
     puts "Created #{@write_file} contains #{char_count} characters"
   
-    File.write(@write_file, text)
+    translated_text = translate_to_braille(message)
+
+    File.write(@write_file, translated_text)
   end
 
-  # def translate_to_braille
-
-  # end
+  def translate_to_braille(letter)
+    message = File.read(@read_file)
+    braille = message.split('')
+    
+    braille.map do |letter|
+      # require 'pry'; binding.pry
+        @braille_alphabet[letter]
+      end.flatten
+  end
 end
 
-# night_writer = NightWriter.new
-# night_writer.call
+night_writer = NightWriter.new
+night_writer.read_write_text
 
 # ^^^ this is acting like a runner file
 # comment out when running rspec
-
-# night_writer is a class that also acts as a runner file

@@ -1,6 +1,6 @@
-# class Translator
+class Translator
 
-# end
+end
 
 # e_b_alphabet = {
 #   "a" => ["0.", "..", ".."],
