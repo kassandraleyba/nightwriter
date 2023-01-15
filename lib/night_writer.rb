@@ -39,7 +39,6 @@ class NightWriter # < Translator
       "'" => ["..", "..", "0."],
       "!" => ["..", "00", "0."],
       "?" => ["..", "0.", "00"]
-      # account for punctuation
     }
   end
   
@@ -66,7 +65,6 @@ class NightWriter # < Translator
       sliced_chars = braille_values.transpose.map do |braille|
         braille.join.chars.each_slice(40).map do |slice|
           slice.join
-          # require 'pry'; binding.pry
         end
     end.transpose.join("\n")
   end
