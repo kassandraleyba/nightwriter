@@ -43,6 +43,11 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           1,
           null,
@@ -52,7 +57,7 @@
           null,
           1,
           null,
-          0,
+          1,
           null,
           null,
           1,
@@ -60,9 +65,24 @@
           2,
           null,
           2,
-          4,
+          166,
+          null,
           null,
           2,
+          6,
+          30,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
@@ -116,23 +136,8 @@
           null,
           null
         ]
-      },
-      "/Users/kassandraleyba/turing_work/1mod/projects/nightwriter/spec/translator_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1673753256
+    "timestamp": 1673811360
   }
 }

@@ -43,7 +43,7 @@ class NightWriter # < Translator
     }
   end
   
-  def read_write_text
+  def call
     message = File.read(@read_file)
    
     char_count = message.chars.count
@@ -59,16 +59,21 @@ class NightWriter # < Translator
     message = File.read(@read_file)
     braille = message.split('')
     
-    new_braille_thing = braille.map do |letter|
+    braille_values = braille.map do |letter|
         @braille_alphabet[letter.downcase]
-        # to account for cap letters
-    end
-    new_braille_thing.transpose.map(&:join).join("\n")
+      end
+      
+      sliced_chars = braille_values.transpose.map do |braille|
+        braille.join.chars.each_slice(40).map do |slice|
+          slice.join
+          # require 'pry'; binding.pry
+        end
+    end.transpose.join("\n")
   end
 end
 
-night_writer = NightWriter.new
-night_writer.read_write_text
+# night_writer = NightWriter.new
+# night_writer.call
 
 # ^^^ this is acting like a runner file
 # comment out when running rspec
