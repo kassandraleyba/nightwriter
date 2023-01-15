@@ -1,4 +1,4 @@
-require "./lib/night_writer"
+require_relative 'spec_helper'
 
 RSpec.describe NightWriter do
   let(:night_writer) { NightWriter.new }
@@ -8,19 +8,22 @@ RSpec.describe NightWriter do
     night_writer.write_file = './braille.txt'
   end
 
-  it "exists" do
-    expect(night_writer).to be_a(NightWriter)
-  end
+  describe "#Initialize" do
+    it "exists" do
+      expect(night_writer).to be_a(NightWriter)
+    end
 
-  it "has attributes" do
-    # allow(night_writer).to receive(:read_file).and_return('./message.txt')
-    # allow(night_writer).to receive(:write_file).and_return('./braille.txt')
-    # stubbing two attributes
-    # stubbing should be for specific things you want to return
+    it "has attributes" do
+      night_writer.read_write_text
 
-    night_writer.call
+      expect(night_writer.read_file).to eq('./message.txt')
+      expect(night_writer.write_file).to eq('./braille.txt')
+    end
+  end 
 
-    expect(night_writer.read_file).to eq('./message.txt')
-    expect(night_writer.write_file).to eq('./braille.txt')
+  describe "Translate" do
+    it "can translate a letter to braille" do
+      expect(night_writer.translate_to_braille("a")).to eq(["0.", "..", ".."])
+    end
   end
 end
