@@ -43,8 +43,21 @@ class NightReader
 
   def english_alphabet
     @braille_alphabet.invert
+    # require 'pry'; binding.pry
+  end
+
+  def call
+    message = File.read(@read_file)
+   
+    char_count = message.chars.count
+    
+    puts "Created #{@write_file} contains #{char_count} characters"
+  
+    translated_text = translate_to_english(message)
+
+    File.write(@write_file, translated_text)
   end
 end
 
-# night_reader = NightReader.new
-# night_reader.call
+night_reader = NightReader.new
+night_reader.call
