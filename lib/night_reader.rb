@@ -63,15 +63,27 @@ class NightReader
     
     
     joined_chars = []
-    braille_split.map do |braille|
-      braille.each do |two_chars|
-        joined_chars << two_chars.chars.each_slice(2).map(&:join)
+    braille_split.filter_map do |braille|
+      braille.each do |characters|
+        joined_chars << characters.chars.each_slice(2).map(&:join)
       end
     end
-    
-    joined_chars.transpose.map do |letter|
-      english_alphabet[letter]
+    # [["0.", "0."], ["..", ".."], ["..", ".."]]
+
+    three_arrays = joined_chars.each_slice(3).map do |three_chars|
+      three_chars
+    end
+    # [ [ [0],[1],[2] ], [ [0],[1],[2] ]  ]
+
+    final_english_string = three_arrays.map do |two_arrays|
+      two_arrays.transpose.map do |braille_letter_array|
+        english_alphabet[braille_letter_array]
+      end
     end.join
+    final_english_string.scan(/.{40}|.+/).join("\n")
+    # scan method . = 40 characters & .+ = remaining characters
+    # require 'pry'; binding.pry
+    # "aa"
   end
 end
 

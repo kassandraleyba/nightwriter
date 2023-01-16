@@ -63,7 +63,7 @@ class NightWriter # < Translator
       end
       
       sliced_chars = braille_values.transpose.map do |braille|
-        braille.join.chars.each_slice(40).map do |slice|
+        braille.join.chars.each_slice(80).map do |slice|
           slice.join
         end
     end.transpose.join("\n")
