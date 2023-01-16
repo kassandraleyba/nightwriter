@@ -1,8 +1,7 @@
-class NightWriter # < Translator
+class NightReader
   attr_accessor :read_file,
-                :write_file, 
+                :write_file,
                 :braille_alphabet
-  # change to attr_reader when stubbing
 
   def initialize
     @read_file = ARGV[0]
@@ -41,37 +40,52 @@ class NightWriter # < Translator
       "?" => ["..", "0.", "00"]
     }
   end
-  
-  def call
-    message = File.read(@read_file)
-   
-    char_count = message.chars.count
-    
-    puts "Created #{@write_file} contains #{char_count} characters"
-  
-    translated_text = translate_to_braille(message)
 
-    File.write(@write_file, translated_text)
+  def english_alphabet
+    @braille_alphabet.invert
   end
 
-  def translate_to_braille(letter)
+  def call
     message = File.read(@read_file)
-    braille = message.split('')
     
-    braille_values = braille.map do |letter|
-        @braille_alphabet[letter.downcase]
+    char_count = message.delete("\n").chars.count
+    puts "Created #{@write_file} contains #{char_count} characters"
+    
+    translated_text = translate_to_english(message)
+    
+    File.write(@write_file, translated_text)
+  end
+  
+  def translate_to_english(braille_letter)
+    message = File.read(@read_file)
+    braille_split = []
+    braille_split << message.split
+    
+    
+    joined_chars = []
+    braille_split.filter_map do |braille|
+      braille.each do |characters|
+        joined_chars << characters.chars.each_slice(2).map(&:join)
       end
-      
-      sliced_chars = braille_values.transpose.map do |braille|
-        braille.join.chars.each_slice(80).map do |slice|
-          slice.join
-        end
-    end.transpose.join("\n")
+    end
+    # [["0.", "0."], ["..", ".."], ["..", ".."]]
+
+    three_arrays = joined_chars.each_slice(3).map do |three_chars|
+      three_chars
+    end
+    # [ [ [0],[1],[2] ], [ [0],[1],[2] ]  ]
+
+    final_english_string = three_arrays.map do |two_arrays|
+      two_arrays.transpose.map do |braille_letter_array|
+        english_alphabet[braille_letter_array]
+      end
+    end.join
+    final_english_string.scan(/.{40}|.+/).join("\n")
+    # scan method . = 40 characters & .+ = remaining characters
+    # require 'pry'; binding.pry
+    # "aa"
   end
 end
 
-# night_writer = NightWriter.new
-# night_writer.call
-
-# ^^^ this is acting like a runner file
-# comment out when running rspec
+night_reader = NightReader.new
+night_reader.call
