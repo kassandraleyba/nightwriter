@@ -4,8 +4,8 @@ class NightReader
                 :braille_alphabet
 
   def initialize
-    @read_file = ARGV[1]
-    @write_file = ARGV[0]
+    @read_file = ARGV[0]
+    @write_file = ARGV[1]
     @braille_alphabet = {
       'a' => ['0.', '..', '..'],
       'b' => ['0.', '0.', '..'],
@@ -43,28 +43,35 @@ class NightReader
 
   def english_alphabet
     @braille_alphabet.invert
-    # require 'pry'; binding.pry
   end
 
   def call
     message = File.read(@read_file)
-   
-    char_count = message.chars.count
     
+    char_count = message.delete("\n").chars.count
     puts "Created #{@write_file} contains #{char_count} characters"
-  
+    
     translated_text = translate_to_english(message)
-
+    
     File.write(@write_file, translated_text)
   end
-
-  def translate_to_english(letter)
+  
+  def translate_to_english(braille_letter)
     message = File.read(@read_file)
-    english = message.split('')
+    braille_split = []
+    braille_split << message.split
     
-    english_values = english.map do |letter|
-        # @braille_alphabet[letter.downcase]
+    
+    joined_chars = []
+    braille_split.map do |braille|
+      braille.each do |two_chars|
+        joined_chars << two_chars.chars.each_slice(2).map(&:join)
       end
+    end
+    
+    joined_chars.transpose.map do |letter|
+      english_alphabet[letter]
+    end.join
   end
 end
 
