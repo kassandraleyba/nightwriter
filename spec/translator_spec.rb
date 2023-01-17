@@ -2,6 +2,7 @@ require_relative 'spec_helper'
 
 RSpec.describe Translator do
   let(:translator) { Translator.new }
+  let(:night_writer) { NightWriter.new }
 
   describe "#Initialize" do
     it "exists" do

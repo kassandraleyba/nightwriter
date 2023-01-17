@@ -2,8 +2,7 @@ require_relative 'translator'
 
 class NightReader < Translator
   attr_accessor :read_file,
-                :write_file,
-                :braille_alphabet
+                :write_file
 
   def initialize
     @read_file = ARGV[0]

@@ -2,8 +2,7 @@ require_relative 'translator'
 
 class NightWriter < Translator
   attr_accessor :read_file,
-                :write_file, 
-                :braille_alphabet
+                :write_file
   # change to attr_reader when stubbing
 
   def initialize
