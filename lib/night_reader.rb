@@ -46,22 +46,13 @@ class NightReader < Translator
 
   def english_alphabet
     super
-    # @braille_alphabet.invert
   end
 
-  # def call
-  #   message = File.read(@read_file)
-    
-  #   char_count = message.delete("\n").chars.count
-
-  #   puts "Created #{@write_file} contains #{char_count} characters"
-    
-  #   translated_text = translate_to_english(message)
-    
-  #   File.write(@write_file, translated_text)
-  # end
+  def call
+    super
+  end
   
-  def translate_to_english(braille_letter)
+  def translate(braille_letter)
     message = File.read(@read_file)
     braille_split = []
     braille_split << message.split
@@ -92,5 +83,5 @@ class NightReader < Translator
   end
 end
 
-# night_reader = NightReader.new
-# night_reader.call
+night_reader = NightReader.new
+night_reader.call

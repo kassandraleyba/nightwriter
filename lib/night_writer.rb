@@ -45,19 +45,11 @@ class NightWriter < Translator
     # }
   end
   
-  # def call
-  #   message = File.read(@read_file)
+  def call
+    super
+  end
 
-  #   char_count = message.chars.count
-    
-  #   puts "Created #{@write_file} contains #{char_count} characters"
-  
-  #   translated_text = translate_to_braille(message)
-
-  #   File.write(@write_file, translated_text)
-  # end
-
-  def translate_to_braille(message)
+  def translate(message)
     braille = message.split('')
     
     braille_values = braille.filter_map do |letter|
@@ -72,8 +64,8 @@ class NightWriter < Translator
   end
 end
 
-night_writer = NightWriter.new
-night_writer.call
+# night_writer = NightWriter.new
+# night_writer.call
 
 # ^^^ this is acting like a runner file
 # comment out when running rspec
