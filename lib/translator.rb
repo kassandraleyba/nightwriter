@@ -53,12 +53,3 @@ class Translator
     File.write(@write_file, translated_text)
   end
 end
-
-
-# make the dictionary a part of translator class
-# this will be your parent class - use inheritance later
-# night_writer < translator
-# night_reader < translator
-# allphabet is an attribute in translator class
-# convert from English to Braille
-# invert from Braille to English

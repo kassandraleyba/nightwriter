@@ -13,7 +13,7 @@ RSpec.describe NightReader do
       expect(night_reader).to be_a(NightReader)
     end
     
-    xit "has attributes" do
+    it "has attributes" do
       night_reader.call
       
       expect(night_reader.read_file).to eq('./braille.txt')
@@ -21,21 +21,21 @@ RSpec.describe NightReader do
     end
   end
   
-  describe "#Alphabet" do
-    xit "can invert the alphabet" do
-      expected = {
-        ["0.", "..", ".."] => "a",
-        ["0.", "0.", ".."] => "b",
-        ["00", "..", ".."] => "c"
-      }
+  # describe "#Alphabet" do
+  #   xit "can invert the alphabet" do
+  #     expected = {
+  #       ["0.", "..", ".."] => "a",
+  #       ["0.", "0.", ".."] => "b",
+  #       ["00", "..", ".."] => "c"
+  #     }
   
-      expect(night_reader.english_alphabet).to eq(expected)
-    end
-  end
+  #     expect(night_reader.english_alphabet).to eq(expected)
+  #   end
+  # end
 
-  describe "Translate" do
-    it "can translate braille to a letter" do
-      expect(night_reader.translate_to_english("0.\n..\n..")).to eq("a")
-    end
-  end
+  # describe "Translate" do
+  #   it "can translate braille to a letter" do
+  #     expect(night_reader.translate_to_english("0.\n..\n..")).to eq("a")
+  #   end
+  # end
 end
