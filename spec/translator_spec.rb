@@ -19,5 +19,15 @@ RSpec.describe Translator do
 
       expect(translator.braille_alphabet).to eq(expected)
     end
+
+    it "can have an alphabet in english" do
+      expected = {
+        ['0.', '..', '..'] => 'a',
+        ['0.', '0.', '..'] => 'b',
+        ['00', '..', '..'] => 'c'
+      }
+    
+      expect(translator.english_alphabet).to eq(expected)
+    end
   end
 end

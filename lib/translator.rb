@@ -36,6 +36,10 @@ class Translator
       "?" => ["..", "0.", "00"]
     }
   end
+
+  def english_alphabet
+    @braille_alphabet.invert
+  end
 end
 
 
