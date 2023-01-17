@@ -1,4 +1,7 @@
-require_relative 'spec_helper'
+# require_relative 'spec_helper'
+require './lib/translator'
+require './lib/night_reader'
+
 
 RSpec.describe NightReader do
   let(:night_reader) { NightReader.new }
@@ -21,21 +24,13 @@ RSpec.describe NightReader do
     end
   end
   
-  # describe "#Alphabet" do
-  #   xit "can invert the alphabet" do
-  #     expected = {
-  #       ["0.", "..", ".."] => "a",
-  #       ["0.", "0.", ".."] => "b",
-  #       ["00", "..", ".."] => "c"
-  #     }
-  
-  #     expect(night_reader.english_alphabet).to eq(expected)
-  #   end
-  # end
+  describe "#Translate" do
+    it "can translate a letter from braille to english" do
+      expect(night_reader.translate("0.\n00\n..")).to eq("h")
+    end
 
-  # describe "Translate" do
-  #   it "can translate braille to a letter" do
-  #     expect(night_reader.translate_to_english("0.\n..\n..")).to eq("a")
-  #   end
-  # end
+    it "can translate two letters from braille to english " do
+      expect(night_reader.translate("0..0\n000.\n....")).to eq("hi")
+    end
+  end
 end
