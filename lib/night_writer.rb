@@ -26,14 +26,12 @@ class NightWriter < Translator
     braille_values = braille.filter_map do |letter|
         @braille_alphabet[letter.downcase]
     end
-    # [[".0", "00", "0."], ["0.", "00", ".."], [etc]]
     
     sliced_chars = braille_values.transpose.map do |braille_letter|
       braille_letter.join.chars.each_slice(80).map do |sliced_letter|
         sliced_letter.join
       end
     end.transpose.join("\n")
-    # ".00.0...000 etc"
   end
 end
 

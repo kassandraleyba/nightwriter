@@ -35,12 +35,10 @@ class NightReader < Translator
         joined_chars << characters.chars.each_slice(2).map(&:join)
       end
     end
-    # [["0.", "0."], ["..", ".."], ["..", ".."]]
 
     three_arrays = joined_chars.each_slice(3).map do |three_chars|
       three_chars
     end
-    # [ [ [0],[1],[2] ], [ [0],[1],[2] ]  ]
 
     final_english_string = three_arrays.map do |two_arrays|
       two_arrays.transpose.map do |braille_letter_array|
@@ -48,11 +46,8 @@ class NightReader < Translator
       end
     end.join
     final_english_string.scan(/.{40}|.+/).join("\n")
-    # scan method . = 40 characters & .+ = remaining characters
-    # require 'pry'; binding.pry
-    # "aa"
   end
 end
 
-night_reader = NightReader.new
-night_reader.call
+# night_reader = NightReader.new
+# night_reader.call
