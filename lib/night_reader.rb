@@ -24,8 +24,7 @@ class NightReader < Translator
     File.write(@write_file, translated_text)
   end
   
-  def translate(braille_letter)
-    message = File.read(@read_file)
+  def translate(message)
     braille_split = []
     braille_split << message.split
     
