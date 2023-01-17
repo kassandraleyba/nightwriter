@@ -5,7 +5,7 @@ RSpec.describe NightReader do
 
   before do
     night_reader.read_file = './braille.txt'
-    night_reader.write_file = './message.txt'
+    night_reader.write_file = './original_message.txt'
   end
 
   describe "#Initialize" do
@@ -17,7 +17,7 @@ RSpec.describe NightReader do
       night_reader.call
       
       expect(night_reader.read_file).to eq('./braille.txt')
-      expect(night_reader.write_file).to eq('./message.txt')
+      expect(night_reader.write_file).to eq('./original_message.txt')
     end
   end
   
