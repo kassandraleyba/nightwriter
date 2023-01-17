@@ -40,6 +40,18 @@ class Translator
   def english_alphabet
     @braille_alphabet.invert
   end
+
+  def call
+    message = File.read(@read_file)
+    
+    char_count = message.delete("\n").chars.count
+    
+    puts "Created #{@write_file} contains #{char_count} characters"
+    
+    translated_text = translate_to_english(message)
+    
+    File.write(@write_file, translated_text)
+  end
 end
 
 
