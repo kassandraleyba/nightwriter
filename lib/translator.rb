@@ -44,11 +44,9 @@ class Translator
   def call
     message = File.read(@read_file)
     
-    char_count = message.delete("\n").chars.count
-
-    puts "Created #{@write_file} contains #{char_count} characters"
-    
     translated_text = translate(message)
+
+    puts "Created #{@write_file} contains #{translated_text.length} characters"
     
     File.write(@write_file, translated_text)
   end
