@@ -3,7 +3,6 @@ require_relative 'translator'
 class NightWriter < Translator
   attr_accessor :read_file,
                 :write_file
-  # change to attr_reader when stubbing
 
   def initialize
     @read_file = ARGV[0]
@@ -12,7 +11,13 @@ class NightWriter < Translator
   end
   
   def call
-    super
+    message = File.read(@read_file)
+    
+    translated_text = translate(message)
+
+    puts "Created #{@write_file} contains #{translated_text.length / 6} characters"
+    
+    File.write(@write_file, translated_text)
   end
 
   def translate(message)

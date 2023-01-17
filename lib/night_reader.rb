@@ -15,7 +15,13 @@ class NightReader < Translator
   end
 
   def call
-    super
+    message = File.read(@read_file)
+    
+    translated_text = translate(message)
+
+    puts "Created #{@write_file} contains #{translated_text.delete("\n").length} characters"
+    
+    File.write(@write_file, translated_text)
   end
   
   def translate(braille_letter)
@@ -49,5 +55,5 @@ class NightReader < Translator
   end
 end
 
-# night_reader = NightReader.new
-# night_reader.call
+night_reader = NightReader.new
+night_reader.call

@@ -23,7 +23,7 @@ RSpec.describe NightReader do
     it "should write the translated message in the given file" do
       night_reader.call
 
-      expect(File.read('./test_braille.txt')).to eq("0..0\n000.\n....")
+      expect(File.read('./test_message.txt')).to eq("0..0\n000.\n....")
     end
   end
   
