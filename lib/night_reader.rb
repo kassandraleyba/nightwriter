@@ -45,9 +45,9 @@ class NightReader < Translator
         english_alphabet[braille_letter_array]
       end
     end.join
-    final_english_string.scan(/.{40}|.+/).join("\n")
+    final_english_string
+    # require 'pry'; binding.pry
+    # .scan(/.{40}|.+/).join("\n")
   end
 end
 
-night_reader = NightReader.new
-night_reader.call
