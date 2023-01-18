@@ -13,7 +13,7 @@ Uncomment the following lines in "./lib/night_writer.rb":
 
 Then run the following line in the command line:
 
-# ruby lib/night_reader.rb braille.txt original_message.txt
+# ruby lib/night_writer.rb message.txt braille.txt
 
 Uncomment the following lines in "./lib/night_reader.rb":
 
