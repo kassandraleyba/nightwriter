@@ -35,5 +35,5 @@ class NightWriter < Translator
   end
 end
 
-# night_writer = NightWriter.new
-# night_writer.call
+night_writer = NightWriter.new
+night_writer.call
